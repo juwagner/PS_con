@@ -11,7 +11,7 @@ Phi <- bspline_matrix(x, m, q, Omega)     # B-spline basis matrix at the covaria
 Delta <- L2_norm_matrix(m, q, l, Omega)   # curvature penalty (default)
 ```
 
-
+The coefficients $\alpha$ of the common P-spline
 ```{r}
 A <- crossprod(Phi) + lambda*crossprod(Delta)    # coefficient matrix
 b <- crossprod(Phi,y)                            # right-hand site
