@@ -4,32 +4,35 @@ The provided code extends the well known P-spline method to constraints on its s
 Further detail can be found in [Wagner et al., 2017](https://rss.onlinelibrary.wiley.com/doi/full/10.1111/rssa.12295).
 
 ## Manual
-For selected parameters, the B-spline basis matrix and the matrix of the penalty term are assembled, where the difference penalty or the curvature penalty (default) can be used.
+For selected parameters, the B-spline basis matrix and the matrix of the penalty term are assembled, where the difference penalty or the curvature penalty (default) can be used:
 ```{r}
 Phi <- bspline_matrix(x, m, q, Omega)     # B-spline basis matrix at the covariates
 #Delta <- diff(diag(K), diff=l)           # difference penalty
 Delta <- L2_norm_matrix(m, q, l, Omega)   # curvature penalty (default)
 ```
 
-The coefficients \[ \alpha \] of the common P-spline
+The coefficients of the common P-spline are determined via the solution of a linear system:
 ```{r}
 A <- crossprod(Phi) + lambda*crossprod(Delta)    # coefficient matrix
 b <- crossprod(Phi,y)                            # right-hand site
 alpha <- solve(A,b)                              # coefficient vector as solution of the linear system
 ```
 
+The matrices for the user-specific shape constraints can be assembled by the functions made available:
 ```{r}
-C1 <- shape_constraints_matrix(x_grid,m,q,r=0,Omega)      # nonnegativity constraint
-C2 <- -shape_constraints_matrix(x_grid,m,q,r=2,Omega)     # concavity constraint
+C1 <- shape_constraints_matrix(x_grid, m, q, r=0, Omega)      # nonnegativity constraint
+C2 <- -shape_constraints_matrix(x_grid, m, q, r=2, Omega)     # concavity constraint
 C <- rbind(C1,C2)                                         
 ```
 
+They are incorporated into the spline fitting process via a quadratic program, which is solved using the `solve.QP` function of the `quadprog` package:
 ```{r}
 A <- crossprod(Phi) + lambda*crossprod(Delta)             # matrix for the quadratic program 
 b <- crossprod(Phi,y)                                     # vector for the quadratic program
 sol <- solve.QP(A, b, t(C))                               # solve the quadratic program
 alpha <- sol$solution   
 ```
+
 
 ```{r}
 W <- diag(D)[area,]                                     # intercept indicator matrix
