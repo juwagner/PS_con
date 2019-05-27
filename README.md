@@ -25,7 +25,7 @@ C2 <- -shape_constraints_matrix(x_grid, m, q, r=2, Omega)     # concavity constr
 C <- rbind(C1,C2)                                         
 ```
 
-They are incorporated into the spline fitting process via a quadratic program, which is solved using the `solve.QP` function of the `quadprog` package:
+They are incorporated into the spline fitting process as linear constraints onto the loss-function, leading a quadratic program, which is solved using the `solve.QP` function of the `quadprog` package:
 ```{r}
 A <- crossprod(Phi) + lambda*crossprod(Delta)             # matrix for the quadratic program 
 b <- crossprod(Phi,y)                                     # vector for the quadratic program
@@ -33,14 +33,15 @@ sol <- solve.QP(A, b, t(C))                               # solve the quadratic 
 alpha <- sol$solution   
 ```
 
-
+Further random effects can be taken into account by means of a rondom effects matrix `W` and an respective extension of the above matrices:
 ```{r}
 W <- diag(D)[area,]                                     # intercept indicator matrix
 B <- cbind(Phi, W)                                      # extension of the basis matrix
-P <- bdiag( crossprod(Delta) , diag(D))                 # extension of the penaly matrix
+P <- bdiag(crossprod(Delta) , diag(D))                  # extension of the penaly matrix
 C_ext <- cbind(C, matrix(0, nrow=dim(C)[1], ncol=D))    # extension of the shape constraint matrix
 ```
 
+The resulting quadratic program is still solved with `solve.QP`:
 ```{r}
 A <- crossprod(B) + lambda*P            # matrix for the quadratic program 
 b <- crossprod(y,B)                     # matrix for the quadratic program 
