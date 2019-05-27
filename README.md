@@ -60,6 +60,6 @@ area <- sample(1:10, n, replace=T)                               # intercept ind
 y <- fx + rnorm(n, sd=0.1) + rnorm(length(area), sd=0.5)[area]   # test function + random error + area specific intercept
 ```
 the estimated functions look like follows
-![Pspline_fits](https://octodex.github.com/images/yaktocat.png)
+![Pspline_fits](https://github.com/juwagner/PS_con/blob/master/results/PSpline_fits.png)
 
 
