@@ -37,19 +37,29 @@ Further random effects can be taken into account by means of a rondom effects ma
 ```{r}
 W <- diag(D)[area,]                                     # intercept indicator matrix
 B <- cbind(Phi, W)                                      # extension of the basis matrix
-P <- bdiag(crossprod(Delta) , diag(D))                  # extension of the penaly matrix
+P <- bdiag(crossprod(Delta), diag(D))                   # extension of the penaly matrix
 C_ext <- cbind(C, matrix(0, nrow=dim(C)[1], ncol=D))    # extension of the shape constraint matrix
 ```
 
 The resulting quadratic program is still solved with `solve.QP`:
 ```{r}
 A <- crossprod(B) + lambda*P            # matrix for the quadratic program 
-b <- crossprod(y,B)                     # matrix for the quadratic program 
+b <- crossprod(y, B)                    # matrix for the quadratic program 
 sol <- solve.QP(A, b, t(C_ext))         # solve the quadratic program
 alpha <- sol$solution[1:K]
 ```
 
 ## Output
-
+For a simple test data set
+```{r}
+n <- 100                          
+x <- sort( runif(n) )
+fx <- sin(pi*x)                                                  # arbitrary test function
+D <- 10                                                          # number of random intercepts
+area <- sample(1:10, n, replace=T)                               # intercept indicator
+y <- fx + rnorm(n, sd=0.1) + rnorm(length(area), sd=0.5)[area]   # test function + random error + area specific intercept
+```
+the estimated functions look like follows
+![Pspline_fits](https://octodex.github.com/images/yaktocat.png)
 
 
