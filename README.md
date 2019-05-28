@@ -49,7 +49,7 @@ sol <- solve.QP(A, b, t(C_ext))         # solve the quadratic program
 alpha <- sol$solution[1:K]
 ```
 
-## Output
+## Results
 For a simple test data set
 ```R
 n <- 100                          
