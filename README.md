@@ -49,7 +49,7 @@ sol <- solve.QP(A, b, t(C_ext))         # solve the quadratic program
 alpha <- sol$solution[1:K]
 ```
 
-## Results
+## Test Results
 For a simple test data set
 ```R
 n <- 100                          
@@ -61,3 +61,8 @@ y <- fx + rnorm(n, sd=0.1) + rnorm(length(area), sd=0.5)[area]   # test function
 ```
 the estimated functions look like follows:
 ![Pspline_fits](https://github.com/juwagner/PS_con/blob/master/results/PSpline_fits.png)
+
+## Application
+![test](https://github.com/juwagner/PS_con/files/3231793/FunctionFit.pdf)
+
+
