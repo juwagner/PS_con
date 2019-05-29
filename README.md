@@ -60,7 +60,10 @@ area <- sample(1:10, n, replace=T)                               # intercept ind
 y <- fx + rnorm(n, sd=0.1) + rnorm(length(area), sd=0.5)[area]   # test function + random error + area specific intercept
 ```
 the estimated functions look like follows:
-<img src="https://user-images.githubusercontent.com/46927836/58548243-38286a00-8209-11e9-8a41-98ae5b7dcb47.png" width="80%" class="center">
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46927836/58548243-38286a00-8209-11e9-8a41-98ae5b7dcb47.png" width="80%">
+</p>
+
 
 
 ## Application
