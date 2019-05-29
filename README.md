@@ -67,10 +67,15 @@ the estimated functions look like follows:
 In [Wagner et al., 2017](https://rss.onlinelibrary.wiley.com/doi/full/10.1111/rssa.12295) the presented method is used to fit a model to observations from the German National Forest Inventory (GNFI) in order to provide relaible timber volume estimates for the several forest districts in Rhinelnad-Palatinate.
 Different models have been used, such as a linear model (BHF), a traditional spline model (SLMM), a spline model with addional random intercept (SOPT), and a spline model with additional intercept on nonnegativity constraint.
 The resulting model fits are
+
 <img src="https://user-images.githubusercontent.com/46927836/58548240-378fd380-8209-11e9-89bc-4570328d19b6.png" width="80%">
+
 and the related forest districts estimates are
+
 <img src="https://user-images.githubusercontent.com/46927836/58548241-38286a00-8209-11e9-859f-71808a0ad47f.png" width="80%">
+
 Further, the related MSE-estimates are
+
 <img src="https://user-images.githubusercontent.com/46927836/58548242-38286a00-8209-11e9-8aec-e37c01efb2e8.png" width="80%">
 
 The results show, that the utilization of shape-constraints and/or additional random effects provides more reliable and in the first place feasible estimates. 
