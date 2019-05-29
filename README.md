@@ -63,6 +63,6 @@ the estimated functions look like follows:
 ![Pspline_fits](https://github.com/juwagner/PS_con/blob/master/results/PSpline_fits.png)
 
 ## Application
-![test](https://github.com/juwagner/PS_con/files/3231793/FunctionFit.pdf)
+![test](https://user-images.githubusercontent.com/46927836/58547363-82a8e700-8207-11e9-83e7-875b93450d8d.png)
 
 
