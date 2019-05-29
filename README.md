@@ -79,7 +79,7 @@ and the related forest districts estimates are
 
 Further, the related MSE-estimates are
 
-<img src="https://user-images.githubusercontent.com/46927836/58548242-38286a00-8209-11e9-8aec-e37c01efb2e8.png" width="80%" class="center">
+<img src="https://user-images.githubusercontent.com/46927836/58548242-38286a00-8209-11e9-8aec-e37c01efb2e8.png" width="80%" align="center">
 
 The results show, that the utilization of shape-constraints and/or additional random effects provides more reliable and in the first place feasible estimates. 
 
