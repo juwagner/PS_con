@@ -60,9 +60,10 @@ area <- sample(1:10, n, replace=T)                               # intercept ind
 y <- fx + rnorm(n, sd=0.1) + rnorm(length(area), sd=0.5)[area]   # test function + random error + area specific intercept
 ```
 the estimated functions look like follows:
-![Pspline_fits](https://github.com/juwagner/PS_con/blob/master/results/PSpline_fits.png)
+![PSpline_fits](https://user-images.githubusercontent.com/46927836/58548243-38286a00-8209-11e9-8a41-98ae5b7dcb47.png)
 
 ## Application
-![test](https://user-images.githubusercontent.com/46927836/58547363-82a8e700-8207-11e9-83e7-875b93450d8d.png)
-
+![FunctionFit-1](https://user-images.githubusercontent.com/46927836/58548240-378fd380-8209-11e9-89bc-4570328d19b6.png)
+![MAP_estimates-1](https://user-images.githubusercontent.com/46927836/58548241-38286a00-8209-11e9-859f-71808a0ad47f.png)
+![MAP_rrmse-1](https://user-images.githubusercontent.com/46927836/58548242-38286a00-8209-11e9-8aec-e37c01efb2e8.png)
 
