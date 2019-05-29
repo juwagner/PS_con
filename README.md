@@ -61,7 +61,7 @@ y <- fx + rnorm(n, sd=0.1) + rnorm(length(area), sd=0.5)[area]   # test function
 ```
 the estimated functions look like follows:
 ![PSpline_fits](https://user-images.githubusercontent.com/46927836/58548243-38286a00-8209-11e9-8a41-98ae5b7dcb47.png)
-<img src="https://user-images.githubusercontent.com/46927836/58548243-38286a00-8209-11e9-8a41-98ae5b7dcb47.png" width="48">
+<img src="https://user-images.githubusercontent.com/46927836/58548243-38286a00-8209-11e9-8a41-98ae5b7dcb47.png" width="80%">
 
 
 ## Application
