@@ -33,7 +33,7 @@ sol <- solve.QP(A, b, t(C))                               # solve the quadratic 
 alpha <- sol$solution   
 ```
 
-Further random effects can be taken into account by means of a rondom effects matrix `W` and an respective extension of the above matrices:
+Further random effects can be taken into account by means of a random effects matrix `W` and a respective extension of the above matrices:
 ```R
 W <- diag(D)[area,]                                     # intercept indicator matrix
 B <- cbind(Phi, W)                                      # extension of the basis matrix
@@ -81,5 +81,5 @@ Further, the related MSE-estimates are
 <p align="center">
   <img src="https://user-images.githubusercontent.com/46927836/58548242-38286a00-8209-11e9-8aec-e37c01efb2e8.png" width="60%">
 </p>
-The results show, that in this particular application, the utilization of shape-constraints and/or additional random effects provides more reliable and in the first place feasible estimates. 
+The results show, that in this particular application, the utilization of shape-constraints and/or additional random effects provide more reliable and in the first place feasible estimates. 
 
