@@ -68,7 +68,7 @@ the estimated functions look like follows:
 
 ## Application
 In [Wagner et al., 2017](https://rss.onlinelibrary.wiley.com/doi/full/10.1111/rssa.12295) the presented method is used to fit a model to observations from the German National Forest Inventory (GNFI) in order to provide relaible timber volume estimates for the several forest districts in Rhinelnad-Palatinate.
-Different models have been used, such as a linear model (BHF), a traditional spline model (SLMM), a spline model with addional random intercept (SOPT), and a spline model with additional intercept on nonnegativity constraint.
+Different models have been used, such as a linear model (BHF), a traditional spline model (SLMM), a spline model with addional random intercept (SOPT), and a spline model with additional intercept and nonnegativity constraint (SOPT_CON).
 The resulting model fits are
 <p align="center">
   <img src="https://user-images.githubusercontent.com/46927836/58548240-378fd380-8209-11e9-89bc-4570328d19b6.png" width="70%">
