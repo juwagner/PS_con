@@ -73,7 +73,7 @@ The resulting model fits are
 <p align="center">
   <img src="https://user-images.githubusercontent.com/46927836/58548240-378fd380-8209-11e9-89bc-4570328d19b6.png" width="70%">
 </p>
-and the related forest districts estimates are
+and the related district-specific estimates are
 <p align="center">
   <img src="https://user-images.githubusercontent.com/46927836/58548241-38286a00-8209-11e9-859f-71808a0ad47f.png" width="60%">
 </p>
